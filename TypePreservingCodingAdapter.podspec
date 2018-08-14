@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
 
-  s.name = 'Type Preserving Coding Adapter'
+  s.name = 'TypePreservingCodingAdapter'
   s.version = '1.0.0'
   s.swift_version = '4.2'
   s.summary = 'Adapter to preserve type when encoding/decoding Codable types'
