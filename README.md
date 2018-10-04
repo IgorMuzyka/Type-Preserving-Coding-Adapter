@@ -91,6 +91,7 @@ let zoo = Zoo(animals: [Cat(), Dog(), Cat(), Dog()])
 let data = try! encoder.encode(zoo)
 let decodedZoo = try! decoder.decode(Zoo.self, from: data)
 ```
+After decoding Cat and Dog instances would be of correct type. (behaves the same if Animal, Dog and Cat would be classes).
 
 ## Author
 
