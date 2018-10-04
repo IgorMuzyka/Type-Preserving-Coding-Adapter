@@ -22,7 +22,7 @@ pod 'TypePreservingCodingAdapter', :git => 'https://github.com/IgorMuzyka/Type-P
 
 ## Protocol usage example
 
-Lets say you want to define Animal Protocol. (This would also work if animal was a class and Dog and Cat would inherit from it).
+Lets say you want to define **Animal** _Protocol_. (This would also work if **Animal** was a _Class_ and **Dog* and **Cat** would _inherit_ from it).
 
 ```swift
 public protocol Animal: Codable {   
@@ -30,7 +30,7 @@ public protocol Animal: Codable {
 }
 ```
 
-And then you have a Dog and a Cat structs which conform to it.
+And then you have a **Dog** and a **Cat** _structs_ which _conform_ to it.
 
 ```swift
 public struct Dog: Animal, Codable {
@@ -42,7 +42,7 @@ public struct Cat: Animal, Codable {
 }
 ```
 
-And then you have some Zoo struct which holds your animals as Animal and is codable. You decide if the animals gets encoded by Alias or Signature by defining strategy when wrapping animals in encode function below.
+And then you have some **Zoo** _struct_ which holds your **animals** as **Animal** and is _codable_. You decide if the **animals** gets _encoded_ by **Alias** or **Signature** by defining **Strategy** when _wrapping_ **animals** in **_encode function_** below.
 
 ```swift
 public struct Zoo: Codable {
@@ -69,9 +69,9 @@ public struct Zoo: Codable {
 }
 ```
 
-To preserve types while decoding and encoding the zoo you'll need to have some setup close to this.
+To preserve types while _decoding_ and _encoding_ the **Zoo** you'll need to have some _setup_ close to this.
 
-Create an Adapter. Set it to user info of encoder and decoder you would use. And register your types and their aliases in adapter.
+Create an **Adapter**. Set it to _userInfo_ of **Encoder** and **Decoder** you would use. And **register** your **types** and their **aliases** in **Adapter**.
 
 ```swift
 let adapter = TypePreservingCodingAdapter()
@@ -91,7 +91,7 @@ let zoo = Zoo(animals: [Cat(), Dog(), Cat(), Dog()])
 let data = try! encoder.encode(zoo)
 let decodedZoo = try! decoder.decode(Zoo.self, from: data)
 ```
-After decoding Cat and Dog instances would be of correct type. (behaves the same if Animal, Dog and Cat would be classes).
+After decoding **Cat** and **Dog** _instances_ would be of _correct type_. (behaves the same if **Animal**, **Dog** and **Cat** would be _classes_).
 
 ## Author
 
