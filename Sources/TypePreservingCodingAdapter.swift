@@ -1,6 +1,6 @@
 
 // MARK: Definition
-/// Type Preserving Coding Adapter for type preserving encoding/decoding of objects which otherwise would require lots of boilerplate Codable conformance code.
+/// Type Preserving Coding Adapter for type preserving encoding/decoding of objects which otherwise would require lots of boilerplate Codable conformance code. (Some boilerplate still required, but much less)
 open class TypePreservingCodingAdapter {
 
 	/// A typealias covering Codable.Type behind a more domain specific name

@@ -3,7 +3,7 @@
 /// Wrapper for objects which require Type preservation while being encoded/decoded
 public struct Wrap {
 
-	/// Defines if coding will be done by Signature or by its Alias
+	/// Strategy Defines if coding will be done by Signature or by its Alias
 	public enum Strategy: UInt, Codable {
 
 		case signature, alias

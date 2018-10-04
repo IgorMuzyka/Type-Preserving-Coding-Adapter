@@ -18,15 +18,7 @@ public struct Alias: Hashable, Equatable, Codable, ExpressibleByStringLiteral {
 		try container.encode(rawValue)
 	}
 
-	public init(stringLiteral value: StringLiteralType) {
-		self.init(value)
-	}
-
-	public init(unicodeScalarLiteral value: String.UnicodeScalarLiteralType) {
-		self.init(value)
-	}
-
-	public init(extendedGraphemeClusterLiteral value: String.ExtendedGraphemeClusterLiteralType) {
-		self.init(value)
-	}
+    public init(stringLiteral value: StringLiteralType) {
+        self.init(value)
+    }
 }
