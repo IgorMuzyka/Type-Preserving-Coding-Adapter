@@ -58,15 +58,13 @@ public struct Zoo: Codable {
     }
     
     public init(from decoder: Decoder) throws {
-        let container = try decoder.ontainer(keyedBy: CodingKeys.self)
-        let wraps = try container.decode([Wrap].self, forKey: .animals)
-        self.animals = wraps.map { $0.wrapped as! Animal }
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.animals = try container.decode([Wrap].self, forKey: .animals).map { $0.wrapped as! Animal }
     }
     
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        let wraps = animals.map { Wrap(wrapped: $0, strategy: .alias) }
-        try container.encode(wraps, forKey: .animals)
+        try container.encode(animals.map { Wrap(wrapped: $0, strategy: .alias) }, forKey: .animals)
     }
 }
 ```
