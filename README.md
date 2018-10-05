@@ -93,6 +93,14 @@ let decodedZoo = try! decoder.decode(Zoo.self, from: data)
 ```
 After decoding **Cat** and **Dog** _instances_ would be of _correct type_. (behaves the same if **Animal**, **Dog** and **Cat** would be _classes_).
 
+## About
+
+- **Signature** - is a string made from the **Type** itself so it should be consistent throughout the **target** (**target name** is a frontmost prefix part of a **signature**). Will differ between targets. **Signature** for **types** may also differ between some **versions** of **iOS SDK**. Example: `__ObjC.UIView.Type` and `__C.UIView.Type`. That's when you may need **alias**.
+- **Alias** - is a way to enable coding when communicating between multiple platforms but still using **Swift**. For example when you have different targets for **iOS**, **macOS** and **Linux** the target name will be a prefix of your type **Signature** so you'll want to use an alias to support the same **struct** or a **class** coding between your **targets**.
+- **TypePreservingCodingAdapter** - is an adapter inserted into **Encoder** and/or **Decoder** to help hide your real **classes** or **structs** behind a **base class** or a **protocol** (as shown in example above in a Protocol usage example). You'll want to register your **types** and **aliases** for them with **Adapter** by using `adapter.register(type: MyClass.self)` or `adapter.register(alias: "my_class", for: MyClass.self)`.
+- **Wrap** - is a helper which allows seamless usage of a **TypePreservingCodingAdapter** with your **types**. Also **Wrap** allows you to select a _coding_ **strategy** which can be `.signature` or `.alias`. And as show in example you can use **Wrap** to wrap your **types** and be sure their **types** are not missed when you _decoding_.
+
+
 ## Author
 
 Igor Muzyka, igormuzyka42@gmail.com
