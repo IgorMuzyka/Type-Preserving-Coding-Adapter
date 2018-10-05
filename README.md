@@ -1,5 +1,7 @@
 ## Type Preserving Coding Adapter
 
+[![Build Status](https://travis-ci.org/IgorMuzyka/Type-Preserving-Coding-Adapter.svg?branch=master)](https://travis-ci.org/IgorMuzyka/Type-Preserving-Coding-Adapter)
+
 Coding Adapter provides you with ***type specific*** *serialization*, so that you can **decode** ***specific subclasses*** where they are *hidden* behind some ***common ancestor*** or hide codable objects behind a ***protocol typed*** *variable*.
 
 > This should probaly also work with **Swift** on **linux**, but i have not tested it yet.
