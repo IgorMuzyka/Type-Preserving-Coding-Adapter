@@ -24,7 +24,7 @@ pod 'TypePreservingCodingAdapter', :git => 'https://github.com/IgorMuzyka/Type-P
 
 ## Protocol usage example
 
-Lets say you want to define **Animal** _Protocol_. (This would also work if **Animal** was a _Class_ and **Dog* and **Cat** would _inherit_ from it).
+Lets say you want to define **Animal** _Protocol_. (This would also work if **Animal** was a _Class_ and **Dog** and **Cat** would _inherit_ from it).
 
 ```swift
 public protocol Animal: Codable {   
