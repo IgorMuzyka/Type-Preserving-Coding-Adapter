@@ -4,7 +4,7 @@
 
 Coding Adapter provides you with ***type specific*** *serialization*, so that you can **decode** ***specific subclasses*** where they are *hidden* behind some ***common ancestor*** or hide codable objects behind a ***protocol typed*** *variable*.
 
-> This should probaly also work with **Swift** on **linux**, but i have not tested it yet.
+> This also works with **Swift** on **linux** (tested).
 
 ## Installation
 
