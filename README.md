@@ -13,7 +13,7 @@ Coding Adapter provides you with ***type specific*** *serialization*, so that yo
 Add this line to your `Package.swift` dependencies
 
 ```swift
-.package(url: "https://github.com/IgorMuzyka/Type-Preserving-Coding-Adapter", .branch("master"))
+.package(url: "https://github.com/IgorMuzyka/Type-Preserving-Coding-Adapter", from: "1.0.0"),
 ```
 
 ### Cocoapods
