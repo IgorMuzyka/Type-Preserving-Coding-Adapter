@@ -1,9 +1,13 @@
 
 /// Represents a definite Signature for a Type.
 /// Example: `Swift.String.Type` for String or it's instance.
-public struct Signature: Hashable, Equatable, Codable {
+public struct Signature: RawRepresentable, Hashable, Equatable, Codable {
 
-	public let rawValue: String
+	public var rawValue: String
+
+    public init(rawValue: String) {
+        self.rawValue = rawValue
+    }
 
 	public init(type _type: Any.Type) {
 		self.rawValue = String(reflecting: type(of: _type))

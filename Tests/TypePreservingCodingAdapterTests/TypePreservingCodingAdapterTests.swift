@@ -1,6 +1,7 @@
 
 import XCTest
-@testable import TypePreservingCodingAdapter
+import Foundation
+import TypePreservingCodingAdapter
 
 final class TypePreservingCodingAdapterTests: XCTestCase {
 
