@@ -1,4 +1,6 @@
 
+import Foundation
+
 /// Represents a definite Signature for a Type.
 /// Example: `Swift.String.Type` for String or it's instance.
 public struct Signature: RawRepresentable, Hashable, Equatable, Codable {
@@ -11,10 +13,16 @@ public struct Signature: RawRepresentable, Hashable, Equatable, Codable {
 
 	public init(type _type: Any.Type) {
 		self.rawValue = String(reflecting: type(of: _type))
+            .components(separatedBy: ".")
+            .dropFirst()
+            .joined(separator: ".")
 	}
 
 	public init(object: Any) {
-		self.rawValue = String(reflecting: type(of: type(of: object)))
+        self.rawValue = String(reflecting: type(of: type(of: object)))
+            .components(separatedBy: ".")
+            .dropFirst()
+            .joined(separator: ".")
 	}
 
 	public init(from decoder: Decoder) throws {
